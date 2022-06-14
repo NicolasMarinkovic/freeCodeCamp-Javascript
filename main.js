@@ -42,8 +42,8 @@ console.log(someObj[someProp]);
 const myObject = {
     top: "hat",
     bottom: "pants"
-  };
-  
+};
+
 myObj.hasOwnProperty("top");
 myObj.hasOwnProperty("middle");
 
@@ -51,40 +51,39 @@ myObj.hasOwnProperty("middle");
 
 const ourStorage = {
     "desk": {
-      "drawer": "stapler"
+        "drawer": "stapler"
     },
     "cabinet": {
-      "top drawer": { 
-        "folder1": "a file",
-        "folder2": "secrets"
-      },
-      "bottom drawer": "soda"
+        "top drawer": {
+            "folder1": "a file",
+            "folder2": "secrets"
+        },
+        "bottom drawer": "soda"
     }
 };
-  
+
 ourStorage.cabinet["top drawer"].folder2; //asi se accede a los objetos dentro de objetos
 ourStorage.desk.drawer;
 
 // nested objectos in array
-  const ourPets = [
-    {
-      animalType: "cat",
-      names: [
-        "Meowzer",
-        "Fluffy",
-        "Kit-Cat"
-      ]
+const ourPets = [{
+        animalType: "cat",
+        names: [
+            "Meowzer",
+            "Fluffy",
+            "Kit-Cat"
+        ]
     },
     {
-      animalType: "dog",
-      names: [
-        "Spot",
-        "Bowser",
-        "Frankie"
-      ]
+        animalType: "dog",
+        names: [
+            "Spot",
+            "Bowser",
+            "Frankie"
+        ]
     }
 ];
-  
+
 ourPets[0].names[1]; //asi se accede al array dentro del objeto dentro del array.
 ourPets[1].names[0];
 
@@ -92,37 +91,57 @@ ourPets[1].names[0];
 // Setup
 const recordCollection = {
     2548: {
-      albumTitle: 'Slippery When Wet',
-      artist: 'Bon Jovi',
-      tracks: ['Let It Rock', 'You Give Love a Bad Name']
+        albumTitle: 'Slippery When Wet',
+        artist: 'Bon Jovi',
+        tracks: ['Let It Rock', 'You Give Love a Bad Name']
     },
     2468: {
-      albumTitle: '1999',
-      artist: 'Prince',
-      tracks: ['1999', 'Little Red Corvette']
+        albumTitle: '1999',
+        artist: 'Prince',
+        tracks: ['1999', 'Little Red Corvette']
     },
     1245: {
-      artist: 'Robert Palmer',
-      tracks: []
+        artist: 'Robert Palmer',
+        tracks: []
     },
     5439: {
-      albumTitle: 'ABBA Gold'
+        albumTitle: 'ABBA Gold'
     }
-  };
-  
-  // Only change code below this line
-  function updateRecords(records, id, prop, value) {
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
     if (prop !== "tracks" && value !== "") {
         records[id][prop] = value;
     } else if (prop === 'tracks' && records[id].hasOwnProperty(prop) === false) {
         records[id][prop] = [value]; //porque se envia un string
     } else if (prop === 'tracks' && value !== "") {
         records[id][prop].push(value);
-    } else if (value === ""){
+    } else if (value === "") {
         delete records[id][prop];
     }
- 
+
     return records;
-  }
-  
-  updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+//      loops
+
+const ourArray = [];
+let i = 0;
+//while
+while (i < 5) {
+    ourArray.push(i);
+    i++;
+}
+//for
+for (let i = 0; i < 5; i++) {
+    ourArray.push(i);
+}
+
+//do while. por lo menos se ejecuta una vez
+do {
+    ourArray.push(i);
+    i++;
+} while (i < 5);
