@@ -5,6 +5,11 @@ undefined, null, boolean, string, symbol, bigint, number, object;
 var myNumber=7; //can write 2 variables with the same name
 let myFirstName= "Nicolas"; //doesnt let you write 2 variables with the same name
 const myPassion= "Programming"; //only reading variable
+/*However, it is important to understand that objects (including arrays and functions) assigned to a variable using 
+const are still mutable. Using the const declaration only prevents reassignment of the variable identifier.*/
+const s = [5, 6, 7];
+s = [1, 2, 3]; // DA ERROR
+s[2] = 45; // SE PUEDE
 
 let sum = 1 + 1;
 let resta = 1-1;
@@ -47,59 +52,8 @@ sandwich[0] = "jamon";
 const teams = [["Bulls", 23], ["White Sox", 45, ["Boca",60]]];
 teams[1][2][0] = "River";
 
-//.push() takes one or more parameters and "pushes" them onto the end of the array.
-const arr1 = [1, 2, 3];
-arr1.push(4);
-
-//.pop() removes the last element from an array and returns that element.
-const threeArr = [1, 4, 6];
-const oneDown = threeArr.pop();
-console.log(oneDown); //6
-console.log(threeArr); //[ 1, 4 ]
-
-//unshift() adds the element at the beginning of the array.
-const ourArray = ["Stimpson", "J", "cat"];
-ourArray.shift();
-ourArray.unshift("Happy");
-
-//.shift() removes the first element and returns that element.
-const anArray = ["Stimpson", "J", ["cat"]];
-const removedFromOurArray = ourArray.shift();
 
 
-/* FUNCTIONS */
-function functionName(param1, param2) {
-    return param1 + param2;
-}
-
-/* Switch */
-switch (num) {
-    case value1:
-      statement1;
-      break;
-    case value2:
-    case value3:
-    case value4:
-      statemente-2-3-4;
-      break;
-  //...
-    default:
-      defaultStatement;
-      break;
-}
-
-/* Conditionals and booleans */
-function test (myCondition) {
-    if (myCondition) {
-      return "It was true";
-    }
-    else {  //else if
-        return "It was false";
-    }
-}
-  
-test(true);
-test(false);
 
 //      comparison operators
 1   ==  1;  /* true */                  3 ===  3;  // true
@@ -126,24 +80,3 @@ test(false);
 
 if (num > 5 && num < 10);               if (num > 10 || num < 5);
 
-
-
-                            /*           OBJECTS         */
-//Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.
-const cat = {
-    "name": "Whiskers",
-    "legs": 4,
-    "tails": 1,
-    "enemies": ["Water", "Dogs"]
-};
-
-
-const myObj = {                                              
-    prop1: "val1",                                             
-    prop2: "val2"                                             
-};                                                               
-
-const prop1val = myObj.prop1; // se puede cambiar el valor asi myObj.prop1 = "value";
-const prop2val = myObj.prop2; 
-                                                                 
-                                                                

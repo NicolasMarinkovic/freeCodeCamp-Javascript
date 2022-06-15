@@ -1,3 +1,22 @@
+/*                                                            OBJECTS                                                              */
+//Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.
+const cat = {
+    "name": "Whiskers",
+    "legs": 4,
+    "tails": 1,
+    "enemies": ["Water", "Dogs"]
+};
+
+
+const myObjects = {                                              
+    prop1: "val1",                                             
+    prop2: "val2"                                             
+};                                                               
+
+const prop1val = myObjects.prop1; // se puede cambiar el valor asi myObj.prop1 = "value";
+const prop2val = myObjects.prop2; 
+                                                                 
+                                                                
 // Accesing objects with bracket notations
 
 const myObj = {
@@ -125,23 +144,3 @@ function updateRecords(records, id, prop, value) {
 }
 
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
-
-//      loops
-
-const ourArray = [];
-let i = 0;
-//while
-while (i < 5) {
-    ourArray.push(i);
-    i++;
-}
-//for
-for (let i = 0; i < 5; i++) {
-    ourArray.push(i);
-}
-
-//do while. por lo menos se ejecuta una vez
-do {
-    ourArray.push(i);
-    i++;
-} while (i < 5);
