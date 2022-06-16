@@ -22,9 +22,9 @@ const removedFromOurArray = ourArray.shift();
 // Math.random();  function that generates a random decimal number between 0 (inclusive) and 1 (exclusive)
 
 function randomFraction() {
-  
+
     return Math.random();
-  
+
 }
 
 //Math.floor() to round the number down to its nearest whole number
@@ -32,12 +32,12 @@ function randomFraction() {
 function randomWholeNum() {
 
     return Math.floor(Math.random() * 10); //his technique will give us a whole number between 0 and 9
-  
+
 }
 
 // Max Min
 function randomRange(myMin, myMax) {
-    
+
     return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
 
 }
@@ -51,7 +51,10 @@ const a = parseInt("007"); // returns integer 7. If the first character in the s
 
 //Object.freeze()  prevent data mutation. NO DEJA QUE EL OBJETO SEA MODIFICADO
 let obj = {
-    name:"FreeCodeCamp",
-    review:"Awesome"
+    name: "FreeCodeCamp",
+    review: "Awesome"
 };
 Object.freeze(obj);
+
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr);
