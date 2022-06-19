@@ -29,3 +29,10 @@ const { johnDoe: { age: userAges, email: userEmail } } = user;
 // Destructuring arrays
 const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
 console.log(a, b, c); // a, b, and c as 1, 2, 5.
+
+//Use Destructuring Assignment to Pass an Object as a Function's Parameters
+const profileUpdate = (profileData) => {
+    const { name, age, nationality, location } = profileData;
+}
+
+const profileUpdates = ({ name, age, nationality, location }) => {}
