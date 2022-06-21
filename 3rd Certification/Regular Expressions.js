@@ -10,7 +10,12 @@ let myRegexx = /perro|gato/;
 //the flag that ignores letter case - the i flag
 let fccRegex = /freeCodeCamp/i; //FrEECODecamp será true tambien
 
-
+/* .replace() is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something. */
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue"); //The sky is blue.
+//You can also access capture groups in the replacement string with dollar signs ($).
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1'); // \s es la character class de whitespaces
 
 /*.match()  extract the actual matches you found */
 "Hello, World!".match(/Hello/); //return ["Hello"]
@@ -77,6 +82,14 @@ soccerWord.match(goRegex); //["goooooooo"]
 gPhrase.match(goRegex); //["g"]
 oPhrase.match(goRegex); //null
 
+// curly brackets ({ and }) specify the lower and upper number of patterns
+//to match only the letter a appearing between 3 and 5 times in the string ah, your regex would be /a{3,5}h/
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/; //Is not required to specify the upper limit. "{3,}" only requires a min of 3 and unlimit max. {3} requires exactly 3 matches
+multipleA.test(A4); //true
+multipleA.test(A2); //false
+
 // ^ also serach for patterns at the beggining f the strings
 let firstString = "Ricky is first and can be found.";
 let firstRegex = /^Ricky/;
@@ -90,3 +103,30 @@ let storyRegex = /story$/;
 storyRegex.test(theEnding); //true
 let noEnding = "Sometimes a story will have to end";
 storyRegex.test(noEnding); //false
+
+// "?"  specify the possible existence of an element. checks for zero or one of the preceding element
+let american = "color";
+let british = "colour";
+let rainbowRegex = /colou?r/;
+rainbowRegex.test(american); //true
+rainbowRegex.test(british); //true
+
+// Lookaheads check for patterns further along.
+// positive lookahead make sure the element in the search pattern is there
+let quit = "qu";
+let quRegex = /q(?=u)/;
+quit.match(quRegex); //["q"]
+// negative lookahead make sure the element in the search pattern is not there
+let noquit = "qt";
+let qRegex = /q(?!u)/;
+noquit.match(qRegex); //["q"]
+//Here is a simple password checker that looks for between 3 and 6 characters and at least one number:
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/; // primero checkea que tenga entre 3 y 6 caracteres. Luego chequea que haya caracteres no nros y despues 1 nro.
+checkPass.test(password);
+
+// Capture groups /(\w+)/  match a word that occurs multiple times.  \1  The substring matched by the group
+let repeatStr = "row row row your boat";
+repeatRegex = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
