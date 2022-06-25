@@ -29,6 +29,14 @@ myObj["Space Name"]; // se puede cambiar el valor asi myObj["Space Name"] = "Jua
 myObj['More Space']; // se pueden agregar objectos de la misma forma myObj["Nombre de Pila"] = "Juan";
 delete myObj["NoSpace"]; // Delete propertie NoSpace
 
+// agregar propiedades a objetos con bracket notation o dot notation.
+//Bracket notation is required if your property has a space in it or if you want to use a variable to name the property
+tekkenCharacter.origin = 'South Korea';
+tekkenCharacter['hair color'] = 'dyed orange';
+const eyes = 'eye color';
+
+tekkenCharacter[eyes] = 'brown';
+
 // Accesing objects with variables
 
 const dogs = {
@@ -63,8 +71,43 @@ const myObject = {
     bottom: "pants"
 };
 
-myObj.hasOwnProperty("top");
-myObj.hasOwnProperty("middle");
+myObj.hasOwnProperty("top");  //true
+myObj.hasOwnProperty("middle");  //false
+
+// in keyword does the same as .hosOwnProperty()
+'top' in myObject; //true
+
+// Iterate Through the Keys of an Object with a for...in Statement
+// Sometimes you may need to iterate through all the keys within an object.
+const users = {
+    Alan: {
+      online: false
+    },
+    Jeff: {
+      online: true
+    },
+    Sarah: {
+      online: false
+    }
+}
+
+for (let user in users) {
+    console.log(user); //Alan, Jeff, Sarah, and Ryan
+}
+
+// Object.keys() generate an array which contains all the keys(properties) stored in an object. This method takes an object as the argument and returns an array of strings representing each property in the object
+let user = {
+    Alan: {
+      age: 27,
+      online: false
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    }
+};
+
+console.log(Object.keys(user)); //[ 'Alan', 'Jeff' ]
 
 // Here's an example of a complex data structure:
 
@@ -144,3 +187,4 @@ function updateRecords(records, id, prop, value) {
 }
 
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
