@@ -17,6 +17,29 @@ ourArray.unshift("Happy");
 const anArray = ["Stimpson", "J", ["cat"]];
 const removedFromOurArray = ourArray.shift();
 
+//splice() remove any number of consecutive elements from anywhere in an array
+//splice()'s 1sr param represents the index on the array from which to begin removing elements, while the 2nd param indicates the number of elements to delete.
+let array = ['today', 'was', 'not', 'so', 'great'];
+array.splice(2, 2); //['today', 'was', 'great']
+//the third parameter, comprised of one or more element(s), to add to the array.
+const numbers = [10, 11, 12, 12, 15];
+const startIndex = 3;
+const amountToDelete = 1;
+numbers.splice(startIndex, amountToDelete, 13, 14);
+console.log(numbers); //[ 10, 11, 12, 13, 14, 15 ]
+
+//slice()  copies or extracts a given number of elements to a new array
+//the first arg is the index at which to begin extraction, and the second arg is the index at which to stop extraction (will not include the last element of the index)
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+let todaysWeather = weatherConditions.slice(1, 3); //['snow', 'sleet']
+
+//indexOf() takes an element as a parameter.And it returns the position or index. Or -1 if the element does not exist on the array
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+
+fruits.indexOf('dates'); //-1
+fruits.indexOf('oranges'); //2
+fruits.indexOf('pears'); //1
+
 //-----------------------------------------Math. ------------------------------------
 
 // Math.random();  function that generates a random decimal number between 0 (inclusive) and 1 (exclusive)
