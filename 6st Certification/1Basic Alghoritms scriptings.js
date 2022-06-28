@@ -140,7 +140,32 @@ repeatStringNumTimes("abc", 3);
 Return the truncated string with a ... ending. */
 
 function truncateString(str, num) {
-    return str;
+    let newStr = str.slice(0, num);
+    if (num < str.length) {
+        newStr += "...";
+    }
+    return newStr;
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length));
+
+//********************************************************************** */
+//********************************************************************** */
+//********************************************************************** */
+
+/*Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. 
+This means that given an element x, the 'truth test' is passed if func(x) is true. 
+If no element passes the test, return undefined.*/
+
+function findElement(arr, func) {
+    let num = 0;
+    for (let i = 0; i < arr.length; i++) {
+      num = arr[i];
+        if (func(num) === true){
+            return num;
+        }
+    }
+    return undefined;
 }
   
-truncateString("A-tisket a-tasket A green and yellow basket", 8);
+findElement([1, 2, 3, 4], num => num % 2 === 0);
