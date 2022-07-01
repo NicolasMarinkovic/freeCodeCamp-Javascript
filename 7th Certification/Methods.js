@@ -1,3 +1,6 @@
+// objects: tangible things people can observe and interact with.
+// qualities, or properties, define what makes up an object. Ex: A car has wheels. Shops sell items. Birds have wings.
+
 // Methods are properties that are functions. This adds different behavior to an object
 
 let duck = {
