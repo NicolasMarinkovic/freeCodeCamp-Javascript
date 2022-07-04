@@ -87,7 +87,7 @@ Bear.prototype = {
 
 function Animal() {}
 
-Animal.prototype = {
+Animal.prototype = { //supertype
     constructor: Animal,
     eat: function() {
         console.log("nom nom nom");

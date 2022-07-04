@@ -52,3 +52,32 @@ for (let property in cardinal) {
 }
 
 console.log(ownProps);
+
+// anonymous function
+(function () {
+    console.log("Chirp, chirp!");
+})();  //  executes right away, and outputs Chirp, chirp! immediately.
+
+/*
+Note that the function has no name and is not stored in a variable. 
+The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. 
+This pattern is known as an immediately invoked function expression or IIFE. This is often used to group related functionality into a single object or module
+*/
+// Note that you have an immediately invoked function expression (IIFE) that returns an object motionModule
+let motionModule = (function () {
+    return {
+      glideMixin: function(obj) {   //We can group these mixins into a module
+        obj.glide = function() {
+          console.log("Gliding on the water");
+        };
+      },
+      flyMixin: function(obj) {     //We can group these mixins into a module
+        obj.fly = function() {
+          console.log("Flying, wooosh!");
+        };
+      }
+    }
+})();
+
+motionModule.glideMixin(duck);
+duck.glide();
