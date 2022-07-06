@@ -40,6 +40,40 @@ fruits.indexOf('dates'); //-1
 fruits.indexOf('oranges'); //2
 fruits.indexOf('pears'); //1
 
+// map() iterates over each item in an array and returns a new array containing the results of calling the callback function on each element. It does this without mutating the original array.
+/*The first argument is the current element being processed. 
+The second is the index of that element.
+the third is the array upon which the map method was called. */
+const users = [
+    { name: 'John', age: 34 },
+    { name: 'Amy', age: 20 },
+    { name: 'camperCat', age: 10 }
+];
+
+const names = users.map(user => user.name); // only uses the 1st argument
+console.log(names);
+
+const ratings = watchList.map(movie => // creo un array de objetos de otro array de objetos de misma longitud.
+    ({ title: movie.Title, rating: movie.imdbRating }) // [{ title: 'Inception', rating: '8.8' },{ title: 'Interstellar', rating: '8.6' },{ title: 'The Dark Knight', rating: '9.0' }]
+);
+
+// filter() calls a function on each element of an array and returns a new array containing only the elements for which that function returns true
+/*
+The callback function accepts three arguments. The first argument is the current element being processed. 
+The second is the index of that element and the third is the array upon which the filter method was called
+*/
+const clients = [
+    { name: 'John', age: 34 },
+    { name: 'Amy', age: 20 },
+    { name: 'camperCat', age: 10 }
+];
+
+const usersUnder30 = users.filter(user => user.age < 30);
+
+const filteredList = watchList.map(movie =>
+    ({ title: movie.Title, rating: movie.imdbRating })
+).filter(movie => parseFloat(movie.rating) > 8);
+
 //-----------------------------------------Math. ------------------------------------
 
 // Math.random();  function that generates a random decimal number between 0 (inclusive) and 1 (exclusive)
