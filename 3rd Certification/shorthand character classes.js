@@ -1,10 +1,10 @@
 //shorthand character classes
-// \w. This shortcut is equal to [A-Za-z0-9_]
+// \w. This shortcut is equal to [A-Za-z0-9_] 
 let quoteSample = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g;
 let result = quoteSample.match(alphabetRegexV2).length; //31
 
-// \W (opposite of the \w) this shortcut is the same as [^A-Za-z0-9_]
+// \W (opposite of the \w) this shortcut is the same as [^A-Za-z0-9_]. DEVUELVE SOLO LETRAS Y NROS
 
 quoteSample = "The five boxing wizards jump quickly.";
 let nonAlphabetRegex = /\W/g;
