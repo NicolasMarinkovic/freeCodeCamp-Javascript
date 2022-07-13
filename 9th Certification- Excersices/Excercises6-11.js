@@ -76,17 +76,65 @@ function pairElement(str) {
         ["A", "T"]
     ];
     let newArr = [];
-    arr.map(char => {
-        for (let i = 0; i < str.match(/\w/g).length; i++) {
+    for (let i = 0; i < str.match(/\w/g).length; i++) {
+        arr.map(char => {
             if (str.charAt(i) === char[0]) {
                 newArr.push(char);
             }
-        }
-    });
+
+        });
+    }
     return newArr;
 }
 
 console.log(pairElement("ATCGA"));
+// ***********************************************************
+// ***********************************************************
+// ***********************************************************
+
+/*
+Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+*/
+
+function fearNotLetter(str) {
+    let num = str.charCodeAt(0);
+    for (let i = 0; i < str.length; i++) {
+        if (num !== str.charCodeAt(i)) {
+            return String.fromCharCode(num);
+        }
+        num++;
+    }
+    return undefined;
+}
+
+console.log(fearNotLetter("abce"));
+
+// ***********************************************************
+// ***********************************************************
+// ***********************************************************
+
+/*
+Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
+In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+
+The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
+Check the assertion tests for examples.
+*/
+
+function uniteUnique(...arr) {
+    return arr
+        .flat() // crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad especificada.
+        .filter((val, index, arr) => {
+            return arr.indexOf(val) === index; // filtra por valores unicos, devuelve el indice de la primera vez que aparece el valor, si es la primera vez que aparece lo devuelve.
+        });
+}
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
 // ***********************************************************
 // ***********************************************************
 // ***********************************************************

@@ -190,6 +190,12 @@ newNumbers.some(function(currentValue) {
     return currentValue < 10;
 });
 
+//flat() crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad especificada.
+
+var arr2 = [1, 2, [3, 4]];
+arr2.flat();
+// [1, 2, 3, 4]
+
 //-----------------------------------------Math. ------------------------------------
 
 // Math.random();  function that generates a random decimal number between 0 (inclusive) and 1 (exclusive)
