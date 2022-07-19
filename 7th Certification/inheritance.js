@@ -6,7 +6,7 @@ function Animal() { } //empty constructor
 Animal.prototype = { //supertype
   constructor: Animal,
   eat: function() {
-    return "nom nom nom"y;
+    return "nom nom nom";
   }
 };
 
