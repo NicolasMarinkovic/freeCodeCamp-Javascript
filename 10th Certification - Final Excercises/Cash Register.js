@@ -31,7 +31,7 @@ function checkCashRegister(price, cash, cid) {
         }
 
         if (changeAmount.indexOf(keyValue) === changeAmount.length-1 && acum < change.toFixed(1)) {
-          return billsToGive = [];  // este if es para cuando no hay dinero suficiente para dar vuelto
+          return billsToGive = [];  // esta condicion verifica si hay dinero suficiente para dar vuelto
         }
 
         billsToGive.push([keyValue[0], parseFloat(acum)]);
@@ -41,7 +41,7 @@ function checkCashRegister(price, cash, cid) {
     }
   );
 
-  cashObject["change"] = billsToGive;
+  cashObject["change"] = billsToGive;  // Le paso por defecto el objeto que armó
 
   billsToGive.forEach(function(arr) {  // Verifica si la cantidad de elementos en billsToGive coincide con la cantidad de elementos del cid. Que tengan los mismos importes. (esto es para el closed)
     let currentArr = arr[0];
@@ -62,5 +62,5 @@ function checkCashRegister(price, cash, cid) {
   return cashObject;
 }
   
-console.log(checkCashRegister(17.3, 100, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 2], ["QUARTER", 5], ["ONE", 4], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+console.log(checkCashRegister(17.3, 28.8, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 2], ["QUARTER", 5], ["ONE", 4], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
 //checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);

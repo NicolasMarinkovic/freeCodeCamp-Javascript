@@ -149,4 +149,18 @@ console.log(bob.getFullName());
 // ***********************************************************
 // ***********************************************************
 
+// devuelve los ultimos 3 nros 1 por 1
+
+function simplify(num){
+  let i = 0;
+  while (num > 1000){
+      num = num / 10;
+      i ++;
+  }
+  x = (num - Math.trunc(num))*(Math.pow(10,i));
+  while (Math.trunc(x) > 10){
+      x /= 10;
+  }
+  return Math.trunc(x);
+}
 
